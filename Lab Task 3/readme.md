@@ -54,13 +54,16 @@ openssl enc -aes-128-cbc -e -in ~/Desktop/securityTest/sample.bmp -out ~/Desktop
 **Output files:** <br>
 After replacing the header of the encrypted files with the header of the real image, <br>
 I got the following images and it is impossible to see any useful information from the encrypted images. <br>
-(The images looks similar. I tried several times but they didn't change. maybe due to colorful pixels or complex image.) <br>
 
 ECB mode: <br>
 <img src="./Images/Task 2/ecb.png" alt="encrypted_ecb" width="500"/>
 <br><br>
 CBC mode: <br>
 <img src="./Images/Task 2/cbc.png" alt="encrypted_cbc" width="500"/>
+
+**Observations:** <br>
+- In ECB mode, it is possible to recover some information from the encrypted image.
+- In CBC mode, it is impossible to recover any information from the encrypted image.
 
 <hr>
 
