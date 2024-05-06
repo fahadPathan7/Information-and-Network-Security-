@@ -316,4 +316,20 @@ H2: <br>
 - H1 uses MD5, while H2 uses SHA-256.
 - MD5 produces a 128-bit hash value, while SHA-256 produces a 256-bit hash value.
 
+**Code to calculate same bits:**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string h1, h2;
+    cin >> h1 >> h2; // taking input
+    int sameBits = 0;
+    for (int i = 0; i < min(h1.length(), h2.length()); i++) {
+        if (h1[i] == h2[i]) sameBits++;
+    }
+    cout << sameBits << endl; // output
+}
+```
+
 <hr>
