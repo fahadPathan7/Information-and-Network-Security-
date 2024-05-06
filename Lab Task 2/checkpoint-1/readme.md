@@ -1,17 +1,17 @@
 # <p align='center'> Lab task 2 (Checkpoint 1)
 
-### Question
+## Question
 The following cipher has been created using the Caesar cipher. Write a program to decipher it.
 ```bash
 Cipher: odroboewscdrolocdcwkbdmyxdbkmdzvkdpybwyeddrobo
 ```
 Write a program to break it and display the result. Show it your teacher.
 
-### Solution approach
+## Solution approach
 - No key is given. So I need to show all the possible cases.
 - Possible range of keys 0-25 (mod values of 26)
 
-### Solution
+## Solution
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,7 +30,7 @@ int main() {
 }
 ```
 
-### Output
+## Output
 For key: 0 <br>
 hwkhuhxplvwkhehvwvpduwfrqwudfwsodwiruprxwwkhuh <br>
 For key: 1 <br>
