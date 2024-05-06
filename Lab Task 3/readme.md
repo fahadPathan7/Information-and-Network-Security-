@@ -236,3 +236,54 @@ SHA-512: <br>
 
 <hr>
 
+## ✔️ Task 6
+### Solution
+**Text file:** <br>
+```text
+Sylhet is a beautiful city
+```
+
+**Commands:** <br>
+Short key length:
+```bash
+# HMAC-MD5
+openssl dgst -hmac "secret" -md5 -hex ~/Desktop/securityTest/test.txt
+
+# HMAC-SHA256
+openssl dgst -hmac "secret" -sha256 -hex ~/Desktop/securityTest/test.txt
+
+# HMAC-SHA1
+openssl dgst -hmac "secret" -sha1 -hex ~/Desktop/securityTest/test.txt
+```
+
+Long key length:
+```bash
+# HMAC-MD5
+openssl dgst -hmac "this_is_a_longer_secret_key" -md5 -hex ~/Desktop/securityTest/test.txt
+
+# HMAC-SHA256
+openssl dgst -hmac "this_is_a_longer_secret_key" -sha256 -hex ~/Desktop/securityTest/test.txt
+
+# HMAC-SHA1
+openssl dgst -hmac "this_is_a_longer_secret_key" -sha1 -hex ~/Desktop/securityTest/test.txt
+```
+
+**Observations:** <br>
+HMAC-MD5:
+- Short key: Limited key length increases vulnerability to brute-force attacks.
+- Long key: Extended key length strengthens security, mitigating brute-force risks.
+- <img src="./Images/Task 6/md5.png" alt="md5" width="500"/>
+<br>
+
+HMAC-SHA256:
+- Short key: Reduced key size raises susceptibility to brute-force attacks.
+- Long key: Expanded key size significantly boosts security.
+- <img src="./Images/Task 6/sha256.png" alt="sha256" width="500"/>
+<br>
+
+HMAC-SHA1:
+- Short key: Smaller keys are more vulnerable to brute-force attacks despite SHA1's inherent strength.
+- Long key: Larger keys enhance security significantly, making brute-force attacks impractical.
+- <img src="./Images/Task 6/sha1.png" alt="sha1" width="500"/>
+
+<hr>
