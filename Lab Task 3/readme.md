@@ -287,3 +287,31 @@ HMAC-SHA1:
 - <img src="./Images/Task 6/sha1.png" alt="sha1" width="500"/>
 
 <hr>
+
+## ✔️ Task 7
+### Solution
+**Text file:** <br>
+```text
+Assignment done
+```
+
+**Commands:** <br>
+```bash
+openssl dgst -md5 ~/Desktop/securityTest/test.txt
+openssl dgst -sha256 ~/Desktop/securityTest/test.txt
+```
+
+**Output:** <br>
+H1: <br>
+<img src="./Images/Task 7/h1.png" alt="H1" width="500"/>
+
+H2: <br>
+<img src="./Images/Task 7/h2.png" alt="H2" width="500"/>
+
+**Observations:** <br>
+- The hash values of H1 and H2 are different.
+- After changing the text file, the hash values of H1 and H2 changed.
+- H1 uses MD5, while H2 uses SHA-256.
+- MD5 produces a 128-bit hash value, while SHA-256 produces a 256-bit hash value.
+
+<hr>
