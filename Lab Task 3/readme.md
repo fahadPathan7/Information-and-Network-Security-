@@ -159,3 +159,80 @@ In the case of OFB mode,
 - therefore, in OFB mode, all plaintext blocks except the corrupted block can be recovered.
 
 <hr>
+
+## ✔️ Task 4
+### Solution
+Here I tested the previous text files.
+
+**Commands:** <br>
+ECB mode:
+```bash
+openssl enc -aes-128-ecb -e -in ~/Desktop/securityTest/test.txt -out ~/Desktop/securityTest/encrypted_test_ecb.txt -K 00112233445566778899aabbccddeeff
+```
+
+CBC mode:
+```bash
+openssl enc -aes-128-cbc -e -in ~/Desktop/securityTest/test.txt -out ~/Desktop/securityTest/encrypted_test_cbc.txt -K 00112233445566778899aabbccddeeff -iv 0102030405060708090a0b0c0d0e0f10
+```
+
+CFB mode:
+```bash
+openssl enc -aes-128-cfb -e -in ~/Desktop/securityTest/test.txt -out ~/Desktop/securityTest/encrypted_test_cfb.txt -K 00112233445566778899aabbccddeeff -iv 0102030405060708090a0b0c0d0e0f10
+```
+
+OFB mode:
+```bash
+openssl enc -aes-128-ofb -e -in ~/Desktop/securityTest/test.txt -out ~/Desktop/securityTest/encrypted_test_ofb.txt -K 00112233445566778899aabbccddeeff -iv 0102030405060708090a0b0c0d0e0f10
+```
+
+**Observations and Explanations:** <br>
+- ECB mode requires padding because it encrypts each block independently. If the plaintext size is not a multiple of the block size, padding is needed to fill the last block.
+- CBC mode also requires padding for the same reason as ECB. Additionally, CBC mode requires an IV (Initialization Vector) for the XOR operation with the first block, but padding is still needed for the last block.
+- CFB mode does not require padding because it operates on a byte level rather than block level. The ciphertext length is the same as the plaintext length.
+- OFB mode also does not require padding because it generates a key stream independently of the plaintext. The ciphertext length matches the plaintext length.
+
+<hr>
+
+## ✔️ Task 5
+### Solution
+**Text file:** <br>
+```text
+Sylhet is a beautiful city
+```
+
+**Commands:** <br>
+```bash
+# MD5
+openssl dgst -md5 ~/Desktop/securityTest/test.txt
+
+# SHA-256
+openssl dgst -sha256 ~/Desktop/securityTest/test.txt
+
+# SHA-512
+openssl dgst -sha512 ~/Desktop/securityTest/test.txt
+```
+
+**Output:** <br>
+MD5: <br>
+<img src="./Images/Task 5/md5.png" alt="md5" width="700"/>
+
+SHA-256: <br>
+<img src="./Images/Task 5/sha_256.png" alt="sha256" width="700"/>
+
+SHA-512: <br>
+<img src="./Images/Task 5/sha_512.png" alt="sha512" width="700"/>
+
+**Observations and Explanations:** <br>
+- Hash Length:
+    - MD5 produces a 128-bit (16-byte) hash value.
+    - SHA-256 produces a 256-bit (32-byte) hash value.
+    - SHA-512 produces a 512-bit (64-byte) hash value.
+- Security Levels:
+    - MD5 is considered weak and vulnerable to collision attacks.
+    - SHA-256 and SHA-512 offer stronger security properties and are recommended for security-critical applications.
+- Speed:
+    - MD5 is faster than SHA-256 and SHA-512.
+    - SHA-512 is slower than SHA-256.
+
+<hr>
+
